@@ -2,6 +2,8 @@ package Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import java.io.File;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -13,6 +15,10 @@ class ContactServiceTest {
 
     @BeforeEach
     void setUp() {
+    	// Clean up the file for testing
+    	File file = new File("contacts.csv");
+        if (file.exists()) file.delete();
+        
         contactService = new ContactService();
     }
 
@@ -52,7 +58,7 @@ class ContactServiceTest {
         Contact updatedContact = new Contact("12", "UpdatedFir", "UpdatedLas", "0987654321", "Updated Address");
         contactService.update("12", updatedContact);
         
-        //Test update was successful
+        // Test update was successful
         Contact result = contactService.getContact("12");
         assertEquals("UpdatedFir", result.getFirstName());
         assertEquals("UpdatedLas", result.getLastName());
@@ -90,23 +96,36 @@ class ContactServiceTest {
         contactService.addContact(contact1);
         contactService.addContact(contact2);
         
-        //test both contacts were added
+        // Test both contacts were added
         assertEquals(contact1, contactService.getContact("1"));
         assertEquals(contact2, contactService.getContact("2"));
         
-        //delete one contact
+        // Delete one contact
         contactService.deleteContact("1");
         
-        //ensure only one contact was deleted
+        // Ensure only one contact was deleted
         assertNull(contactService.getContact("1"));
         assertEquals(contact2, contactService.getContact("2"));
         
-        //delete the second contact
+        // Delete the second contact
         contactService.deleteContact("2");
         
-        //ensure both were deleted
+        // Ensure both were deleted
         assertNull(contactService.getContact("1"));
         assertNull(contactService.getContact("2"));
+    }
+    
+    @Test
+    void testSaveToFileAndLoadFromFile() {
+    	// Add contacts
+        Contact contact1 = new Contact("1", "First", "Last", "1234567890", "123 Main Street");
+        contactService.addContact(contact1);
+        
+        ContactService loadedService = new ContactService();
+        
+        assertNotNull(loadedService.getContact("1"));
+        
+        assertEquals("First", loadedService.getContact("1").getFirstName());
     }
 
 }

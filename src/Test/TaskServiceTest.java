@@ -2,6 +2,7 @@ package Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import java.io.File;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -23,12 +24,18 @@ class TaskServiceTest{
     // Method to get a future date
     private Date getFutureDate(int daysAhead) {
         Calendar cal = Calendar.getInstance();
-        cal.add(Calendar.DATE, daysAhead); // adds the number of days to current date
+        // Adds the number of days to current date
+        cal.add(Calendar.DATE, daysAhead); 
         return cal.getTime();
     }
     
     @BeforeEach
     void setUp() {
+    	// Clear persisted files
+        new File("contacts.csv").delete();
+        new File("appointments.csv").delete();
+        new File("tasks.csv").delete();
+        
     	contactService = new ContactService();
         contactService.addContact(new Contact("C123", "John", "Doe", "1234567890", "123 Main St"));
         
@@ -55,7 +62,8 @@ class TaskServiceTest{
         Task task1 = new Task("1234", "Name", "Description", "A123");
         taskService.addTask(task1);
 
-        Task task2 = new Task("1234", "NameAgain", "DescriptionAgain", "A123"); //Same taskID
+        // Same taskID
+        Task task2 = new Task("1234", "NameAgain", "DescriptionAgain", "A123"); 
         assertThrows(IllegalArgumentException.class, () -> {
             taskService.addTask(task2);
         });
@@ -76,7 +84,7 @@ class TaskServiceTest{
         Task updatedTask = new Task("123", "UpdatedName", "UpdatedDescription", "A123");
         taskService.update("123", updatedTask);
         
-        //Test update was successful
+        // Test update was successful
         Task result = taskService.getTask("123");
         assertEquals("UpdatedName", result.getName());
         assertEquals("UpdatedDescription", result.getDescription());
@@ -124,7 +132,7 @@ class TaskServiceTest{
         Task task = new Task("246", "Name", "Description", "A123");
         taskService.addTask(task);
 
-        //test the integration between Task and TaskService
+        // Test the integration between Task and TaskService
         Task retrievedTask = taskService.getTask("246");
         assertNotNull(retrievedTask);
         assertEquals("246", retrievedTask.getTaskID());
@@ -138,27 +146,53 @@ class TaskServiceTest{
         Task task1 = new Task("1234", "Name", "Description", "A123");
         Task task2 = new Task("4321", "Name2", "Description2", "A123");
         
-    	//add multiple tasks
+    	// Add multiple tasks
         taskService.addTask(task1);
         taskService.addTask(task2);
         
-        //Ensure both were added
+        // Ensure both were added
         assertEquals(task1, taskService.getTask("1234"));
         assertEquals(task2, taskService.getTask("4321"));
         
-        //Delete one task
+        // Delete one task
         taskService.deleteTask("1234");
         
-        //Ensure task one was deleted and task two remains
+        // Ensure task one was deleted and task two remains
         assertNull(taskService.getTask("1234"));
         assertEquals(task2, taskService.getTask("4321"));
         
-        //Delete the second task
+        // Delete the second task
         taskService.deleteTask("4321");
         
-        //Ensure both were deleted
+        // Ensure both were deleted
         assertNull(taskService.getTask("1234"));
         assertNull(taskService.getTask("4321"));
+    }
+    
+    @Test
+    void testAddTaskWithNonExistentAppointment() {
+        // Attempt to add a task with an appointment ID that does not exist
+        Task task = new Task("1234", "Name", "Description", "0000");
+
+        assertThrows(IllegalArgumentException.class, () -> {
+            taskService.addTask(task);
+        });
+    }
+    
+    @Test
+    void testSaveToFileAndLoadFromFile() {
+        // Add tasks
+        Task task = new Task("1234", "Name", "Description", "A123");
+        
+        taskService.addTask(task);
+        
+        // Create a new instance to trigger loadFromFile()
+        TaskService loadedService = new TaskService(appointmentService);
+
+        // Verify tasks were properly loaded
+        assertNotNull(loadedService.getTask("1234"));
+
+        assertEquals("Name", loadedService.getTask("1234").getName());
     }
 
 }

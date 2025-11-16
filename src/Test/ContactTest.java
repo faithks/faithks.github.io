@@ -40,16 +40,21 @@ class ContactTest {
         Contact contact = new Contact("1", "First", "Last", "1234567890", "123 Main Street");
         
         assertThrows(IllegalArgumentException.class, () -> {
-            contact.setPhone("Invalid123");  // Non-numeric phone number
+        	// Non-numeric phone number
+            contact.setPhone("Invalid123"); 
         });
     }
 
     @ParameterizedTest
     @CsvSource({
-        "1, First, Last, 123, 123 Main Street",               // Invalid phone number (too short)
-        "1, First, Last, abcdefghij, 123 Main Street",         // Invalid phone number (non-numeric)
-        "1, First, Last, 1234567891, ''",                     // Empty address
-        "1, First, Last, 1234567891, 1234567890123456789012345678901" // Address too long
+    	// Invalid phone number (too short)
+        "1, First, Last, 123, 123 Main Street",
+        // Invalid phone number (non-numeric)
+        "1, First, Last, abcdefghij, 123 Main Street",
+        // Empty address
+        "1, First, Last, 1234567891, ''",
+        // Address too long
+        "1, First, Last, 1234567891, 1234567890123456789012345678901"
     })
     void testInvalidContactCreation(String contactID, String firstName, String lastName, String number, String address) {
         assertThrows(IllegalArgumentException.class, () -> {
@@ -70,11 +75,16 @@ class ContactTest {
     
     @ParameterizedTest
     @CsvSource({
-        "12345678901, FirstName1, LastName10, 1234567890, 1234 Max Length Street City CA",  // Contact ID too long
-        "1234567890, FirstName11, LastName10, 1234567890, 1234 Max Length Street City CA",  // First name too long
-        "1234567890, FirstName1, LastName101, 1234567890, 1234 Max Length Street City CA",  // Last name too long
-        "1234567890, FirstName1, LastName10, 12345678901, 1234 Max Length Street City CA",  // Phone Number too long
-        "1234567890, FirstName1, LastName10, 1234567890, 1234 Extra Length Street City CA"  // Address too long
+    	// Contact ID too long
+        "12345678901, FirstName1, LastName10, 1234567890, 1234 Max Length Street City CA",
+        // First name too long
+        "1234567890, FirstName11, LastName10, 1234567890, 1234 Max Length Street City CA", 
+        // Last name too long
+        "1234567890, FirstName1, LastName101, 1234567890, 1234 Max Length Street City CA",  
+        // Phone Number too long
+        "1234567890, FirstName1, LastName10, 12345678901, 1234 Max Length Street City CA", 
+        // Address too long
+        "1234567890, FirstName1, LastName10, 1234567890, 1234 Extra Length Street City CA" 
     })
     void testLongLengths(String contactID, String firstName, String lastName, String phone, String address) {
         assertThrows(IllegalArgumentException.class, () -> {
@@ -84,11 +94,16 @@ class ContactTest {
     
     @ParameterizedTest
     @CsvSource({
-        "'', First, Last, 1234567890, 123 Main Street",     // Empty contact ID
-        "1, '', Last, 1234567890, 123 Main Street",         // Empty first name
-        "1, First, '', 1234567890, 123 Main Street",        // Empty last name
-        "1, First, Last, '', 123 Main Street",				// Empty phone
-        "1, First, Last, 1234567890, ''"					// Empty address
+    	// Empty contact ID
+        "'', First, Last, 1234567890, 123 Main Street",    
+        // Empty first name
+        "1, '', Last, 1234567890, 123 Main Street",
+        // Empty last name
+        "1, First, '', 1234567890, 123 Main Street",
+        // Empty phone
+        "1, First, Last, '', 123 Main Street",
+        // Empty address
+        "1, First, Last, 1234567890, ''"
     })
     void testEmptyFields(String contactID, String firstName, String lastName, String phone, String address) {
         assertThrows(IllegalArgumentException.class, () -> {
