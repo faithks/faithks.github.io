@@ -2,23 +2,47 @@ package Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import java.util.Calendar;
+import java.util.Date;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import Appointment.Appointment;
+import Appointment.AppointmentService;
+import Contact.Contact;
+import Contact.ContactService;
 import Task.Task;
 import Task.TaskService;
 
 class TaskServiceTest{
     private TaskService taskService;
+    private AppointmentService appointmentService;
+    private ContactService contactService;
 
+    // Method to get a future date
+    private Date getFutureDate(int daysAhead) {
+        Calendar cal = Calendar.getInstance();
+        cal.add(Calendar.DATE, daysAhead); // adds the number of days to current date
+        return cal.getTime();
+    }
+    
     @BeforeEach
     void setUp() {
-        taskService = new TaskService ();
+    	contactService = new ContactService();
+        contactService.addContact(new Contact("C123", "John", "Doe", "1234567890", "123 Main St"));
+        
+        appointmentService = new AppointmentService(contactService);
+        
+        Date futureDate = getFutureDate(1);
+        appointmentService.addAppointment(new Appointment("A123", futureDate, "Description", "C123"));
+    	
+        taskService = new TaskService (appointmentService);
     }
 
     @Test
     void testAddTask() {
-        Task task = new Task("1234", "Name", "Description");
+        Task task = new Task("1234", "Name", "Description", "A123");
         taskService.addTask(task);
         
      // Verify that the task was added successfully
@@ -28,10 +52,10 @@ class TaskServiceTest{
 
     @Test
     void testAddDuplicateTask() {
-        Task task1 = new Task("1234", "Name", "Description");
+        Task task1 = new Task("1234", "Name", "Description", "A123");
         taskService.addTask(task1);
 
-        Task task2 = new Task("1234", "NameAgain", "DescriptionAgain"); //Same taskID
+        Task task2 = new Task("1234", "NameAgain", "DescriptionAgain", "A123"); //Same taskID
         assertThrows(IllegalArgumentException.class, () -> {
             taskService.addTask(task2);
         });
@@ -39,23 +63,24 @@ class TaskServiceTest{
 
     @Test
     void testDeleteTask() {
-        Task task = new Task("12345", "Name", "Description");
+        Task task = new Task("12345", "Name", "Description", "A123");
         taskService.addTask(task);
         taskService.deleteTask("12345");
     }
 
     @Test
     void testUpdateTask() {
-        Task task = new Task("123", "Name", "Description");
+        Task task = new Task("123", "Name", "Description", "A123");
         taskService.addTask(task);
         
-        Task updatedTask = new Task("123", "UpdatedName", "UpdatedDescription");
+        Task updatedTask = new Task("123", "UpdatedName", "UpdatedDescription", "A123");
         taskService.update("123", updatedTask);
         
         //Test update was successful
         Task result = taskService.getTask("123");
         assertEquals("UpdatedName", result.getName());
         assertEquals("UpdatedDescription", result.getDescription());
+        assertEquals("A123", result.getAppointmentID());
 
     }
     
@@ -75,7 +100,7 @@ class TaskServiceTest{
 
     @Test
     void testUpdateNonExistentTask() {
-        Task updatedTask = new Task("5555", "UpdatedName", "UpdatedDescription");
+        Task updatedTask = new Task("5555", "UpdatedName", "UpdatedDescription", "A123");
         assertThrows(IllegalArgumentException.class, () -> {
             taskService.update("5555", updatedTask);
         });
@@ -83,8 +108,8 @@ class TaskServiceTest{
 
     @Test
     void testAddMultipleTask() {
-        Task task1 = new Task("1", "Name", "Description");
-        Task task2 = new Task("2", "Name2", "Description2");
+        Task task1 = new Task("1", "Name", "Description", "A123");
+        Task task2 = new Task("2", "Name2", "Description2", "A123");
         taskService.addTask(task1);
         taskService.addTask(task2);
         
@@ -96,7 +121,7 @@ class TaskServiceTest{
     
     @Test
     void testTaskCreationAndRetrieval() {
-        Task task = new Task("246", "Name", "Description");
+        Task task = new Task("246", "Name", "Description", "A123");
         taskService.addTask(task);
 
         //test the integration between Task and TaskService
@@ -105,12 +130,13 @@ class TaskServiceTest{
         assertEquals("246", retrievedTask.getTaskID());
         assertEquals("Name", retrievedTask.getName());
         assertEquals("Description", retrievedTask.getDescription());
+        assertEquals("A123", retrievedTask.getAppointmentID());
     }
     
     @Test
     void testAddAndDeleteMultipleTasks () {
-        Task task1 = new Task("1234", "Name", "Description");
-        Task task2 = new Task("4321", "Name2", "Description2");
+        Task task1 = new Task("1234", "Name", "Description", "A123");
+        Task task2 = new Task("4321", "Name2", "Description2", "A123");
         
     	//add multiple tasks
         taskService.addTask(task1);

@@ -9,18 +9,23 @@ public class Contact {
 
     // Constructor with validation
     public Contact(String contactID, String firstName, String lastName, String phone, String address) {
-        if (contactID == null || contactID.isEmpty() || contactID.length() > 10) {
+        // Validate contactID
+    	if (contactID == null || contactID.isEmpty() || contactID.length() > 10) {
             throw new IllegalArgumentException("Contact ID must not be null, empty, and must be 10 characters or less.");
         }
+    	// Validate first name
         if (firstName == null || firstName.isEmpty() || firstName.length() > 10) {
             throw new IllegalArgumentException("First name must not be null, empty, and must be 10 characters or less.");
         }
+        // Validate last name
         if (lastName == null || lastName.isEmpty() || lastName.length() > 10) {
             throw new IllegalArgumentException("Last name must not be null, empty, and must be 10 characters or less.");
         }
+        // Validate phone number
         if (phone == null || phone.length() != 10 || !phone.matches("\\d+")) {  
             throw new IllegalArgumentException("Phone must not be null, and must contain exactly 10 digits.");
         }
+        // Validate address
         if (address == null || address.isEmpty() || address.length() > 30) {
             throw new IllegalArgumentException("Address must not be null, empty, and must be 30 characters or less.");
         }
@@ -81,4 +86,6 @@ public class Contact {
         }
         this.address = address;
     }
+    
+    // No setter for contactID to keep it immutable
 }

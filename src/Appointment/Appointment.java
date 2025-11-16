@@ -12,33 +12,40 @@ package Appointment;
 import java.util.Date;
 
 public class Appointment {
-    private final String appointmentID;
-    private final Date appointmentDate;
-    private String apptDescription;
+    private final String appointmentID; // Cannot be modified after initialization
+    private final Date date;
+    private String description;
+    private final String contactID;
 
     // Constructor with validation
-    public Appointment(String appointmentID, Date appointmentDate, String apptDescription) {
+    public Appointment(String appointmentID, Date date, String description, String contactID) {
         // Validate appointmentID
         if (appointmentID == null || appointmentID.isEmpty() || appointmentID.length() > 10) {
             throw new IllegalArgumentException("Appointment ID must not be null, empty, and must be 10 characters or less.");
         }
 
         // Validate appointmentDate
-        if (appointmentDate == null) {
+        if (date == null) {
             throw new IllegalArgumentException("Date must not be null.");
         }
-        if (appointmentDate.before(new Date())) {
+        if (date.before(new Date())) {
             throw new IllegalArgumentException("Appointment date cannot be in the past.");
         }
 
         // Validate description
-        if (apptDescription == null || apptDescription.isEmpty() || apptDescription.length() > 50) {
+        if (description == null || description.isEmpty() || description.length() > 50) {
             throw new IllegalArgumentException("The appointment�s description must not be null, empty, and must be 50 characters or less.");
+        }
+        
+        // Validate contactID
+        if (contactID == null || contactID.isEmpty()) {
+        	throw new IllegalArgumentException("Appointment must be associated with a contact.");
         }
 
         this.appointmentID = appointmentID;
-        this.appointmentDate = appointmentDate;
-        this.apptDescription = apptDescription;
+        this.date = date;
+        this.description = description;
+        this.contactID = contactID;
     }
 
     // Getters
@@ -46,21 +53,25 @@ public class Appointment {
         return appointmentID;
     }
 
-    public Date getAppointmentDate() {
-        return appointmentDate;
+    public Date getDate() {
+        return date;
     }
 
-    public String getApptDescription() {
-        return apptDescription;
+    public String getDescription() {
+        return description;
+    }
+    
+    public String getContactID() {
+    	return contactID;
     }
 
-    // Setters
-    public void setApptDescription(String apptDescription) {
-        if (apptDescription == null || apptDescription.isEmpty() || apptDescription.length() > 50) {
+    // Setters with validation
+    public void setDescription(String Description) {
+        if (Description == null || Description.isEmpty() || Description.length() > 50) {
             throw new IllegalArgumentException("The appointment�s description must not be null, empty, and must be 50 characters or less.");
         }
-        this.apptDescription = apptDescription;
+        this.description = Description;
     }
 
-    // No setter for appointmentID or appointmentDate to keep them immutable
+    // No setter for appointmentID, Date, or contactID to keep them immutable
 }

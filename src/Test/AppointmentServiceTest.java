@@ -7,12 +7,15 @@ import org.junit.jupiter.api.Test;
 
 import Appointment.Appointment;
 import Appointment.AppointmentService;
+import Contact.Contact;
+import Contact.ContactService;
 
 import java.util.Date;
 import java.util.Calendar;
 
 class AppointmentServiceTest {
     private AppointmentService appointmentService;
+    private ContactService contactService;
 
  // Method to get a future date
     private Date getFutureDate(int daysAhead) {
@@ -30,13 +33,16 @@ class AppointmentServiceTest {
 
     @BeforeEach
     void setUp() {
-        appointmentService = new AppointmentService();
+    	contactService = new ContactService();
+        contactService.addContact(new Contact("C123", "John", "Doe", "1234567890", "123 Main St"));
+        
+        appointmentService = new AppointmentService(contactService);
     }
 
     @Test
     void testAddAppointment() {
         Date futureDate = getFutureDate(1);
-        Appointment appointment = new Appointment("1234", futureDate, "Description");
+        Appointment appointment = new Appointment("1234", futureDate, "Description", "C123");
         appointmentService.addAppointment(appointment);
 
         // Verify that the appointment was added successfully
@@ -47,11 +53,11 @@ class AppointmentServiceTest {
     @Test
     void testAddDuplicateAppointment() {
         Date futureDate = getFutureDate(1);
-        Appointment appointment1 = new Appointment("1234", futureDate, "Description");
+        Appointment appointment1 = new Appointment("1234", futureDate, "Description", "C123");
         appointmentService.addAppointment(appointment1);
 
         //Attempting to add duplicate appointment ID
-        Appointment appointment2 = new Appointment("1234", futureDate, "Description 2"); // Same ID
+        Appointment appointment2 = new Appointment("1234", futureDate, "Description 2", "C123"); // Same ID
         assertThrows(IllegalArgumentException.class, () -> {
             appointmentService.addAppointment(appointment2);
         });
@@ -60,7 +66,7 @@ class AppointmentServiceTest {
     @Test
     void testDeleteAppointment() {
         Date futureDate = getFutureDate(1);
-        Appointment appointment = new Appointment("12345", futureDate, "Description");
+        Appointment appointment = new Appointment("12345", futureDate, "Description", "C123");
         appointmentService.addAppointment(appointment);
         
         // Deleting the appointment
@@ -87,8 +93,8 @@ class AppointmentServiceTest {
     @Test
     void testAddMultipleAppointments() {
         Date futureDate = getFutureDate(1);
-        Appointment appointment1 = new Appointment("1", futureDate, "First Description");
-        Appointment appointment2 = new Appointment("2", futureDate, "Second Description");
+        Appointment appointment1 = new Appointment("1", futureDate, "First Description", "C123");
+        Appointment appointment2 = new Appointment("2", futureDate, "Second Description", "C123");
 
         appointmentService.addAppointment(appointment1);
         appointmentService.addAppointment(appointment2);
@@ -101,22 +107,23 @@ class AppointmentServiceTest {
     @Test
     void testAppointmentCreationAndRetrieval() {
         Date futureDate = getFutureDate(1);
-        Appointment appointment = new Appointment("246", futureDate, "Description");
+        Appointment appointment = new Appointment("246", futureDate, "Description", "C123");
         appointmentService.addAppointment(appointment);
 
         // Test the integration between Appointment and AppointmentService
         Appointment retrievedAppointment = appointmentService.getAppointment("246");
         assertNotNull(retrievedAppointment);
         assertEquals("246", retrievedAppointment.getAppointmentID());
-        assertEquals("Description", retrievedAppointment.getApptDescription());
-        assertEquals(futureDate, retrievedAppointment.getAppointmentDate());
+        assertEquals("Description", retrievedAppointment.getDescription());
+        assertEquals(futureDate, retrievedAppointment.getDate());
+        assertEquals("C123", retrievedAppointment.getContactID());
     }
     
     @Test
     void testAddAndDeleteMultipleAppointments() {
         Date futureDate = getFutureDate(1);
-        Appointment appointment1 = new Appointment("1", futureDate, "Description 1");
-        Appointment appointment2 = new Appointment("2", futureDate, "Description 2");
+        Appointment appointment1 = new Appointment("1", futureDate, "Description 1", "C123");
+        Appointment appointment2 = new Appointment("2", futureDate, "Description 2", "C123");
         
         // Add both appointments
         appointmentService.addAppointment(appointment1);
@@ -147,7 +154,7 @@ class AppointmentServiceTest {
 
         // Attempt to add an appointment with a past date
         assertThrows(IllegalArgumentException.class, () -> {
-            new Appointment("1234", pastDate, "Description");
+            new Appointment("1234", pastDate, "Description", "C123");
         });
     }
 
