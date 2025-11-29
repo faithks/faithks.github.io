@@ -6,6 +6,7 @@ import java.sql.SQLException;
 
 public class DatabaseManager {
 
+	// Connect to SQLite database
     private static final String DB_URL = "jdbc:sqlite:animals.db";
 
     public static Connection getConnection() throws SQLException {

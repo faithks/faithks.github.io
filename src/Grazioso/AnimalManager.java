@@ -26,6 +26,7 @@ public class AnimalManager {
     private static final HashMap<String, List<Monkey>> monkeysByCountry = new HashMap<>();
     private static final HashMap<TrainingStatus, List<Monkey>> monkeysByTraining = new HashMap<>();
 
+    // Load data from SQLite database
     public static void loadAnimalsFromDB() {
         // Load dogs
         List<Dog> dogsFromDB = dogDAO.getAllDogs();
@@ -134,6 +135,7 @@ public class AnimalManager {
         Dog newDog = new Dog(name, breed, gender, age, weight, acquisitionDate,
                 acquisitionLocation, trainingStatus, reserved, inServiceCountry);
 
+        // Add to hash maps and to database
         addDog(newDog);
         dogDAO.insertDog(newDog);
 
@@ -235,6 +237,7 @@ public class AnimalManager {
             Monkey newMonkey = (new Monkey(name, species, gender, age, weight, tailLength, height, bodyLength,
                     acquisitionDate, acquisitionLocation, trainingStatus, reserved, serviceCountry));
            
+            // Add to hash maps and to database
             addMonkey(newMonkey);
             monkeyDAO.insertMonkey(newMonkey);
 

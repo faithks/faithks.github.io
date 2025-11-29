@@ -9,23 +9,20 @@
 
 package Grazioso;
 
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
-import Grazioso.Animals.Dog;
-import Grazioso.Animals.Monkey;
-import Grazioso.Animals.TrainingStatus;
 import Grazioso.database.DatabaseInitializer;
 
 public class Driver {
     public static void main(String[] args) {
 
+    	// Initialize database
     	DatabaseInitializer.initialize();
     	
         Scanner scanner = new Scanner(System.in);
         char choice = 0;
         
+        // Load in data to hash maps
         AnimalManager.loadAnimalsFromDB();
 
 
@@ -81,35 +78,4 @@ public class Driver {
         System.out.println();
         System.out.println("Enter a menu selection");
     }
-
-
-    // Adds dogs to a list for testing
-    public static void initializeDogList() {
-        AnimalManager.addDog(new Dog("Spot", "German Shepherd", "male", 1, 25.6,
-        		LocalDate.parse("05-12-2019", DateTimeFormatter.ofPattern("MM-dd-yyyy")), "United States",
-                TrainingStatus.fromString("intake"), false, "United States"));
-
-        AnimalManager.addDog(new Dog("Rex", "Great Dane", "male", 3, 35.2,
-        		LocalDate.parse("02-03-2020", DateTimeFormatter.ofPattern("MM-dd-yyyy")), "United States",
-                TrainingStatus.fromString("in service"), false, "United States"));
-
-        AnimalManager.addDog(new Dog("Bella", "Chihuahua", "female", 4, 25.6,
-        		LocalDate.parse("12-12-2019", DateTimeFormatter.ofPattern("MM-dd-yyyy")), "Canada",
-                TrainingStatus.fromString("in service"), true, "Canada"));
-    }
-
-    // Adds monkeys to a list for testing
-    public static void initializeMonkeyList() {
-        AnimalManager.addMonkey(new Monkey("Gold", "Capuchin", "male", 4, 25.0,
-                12.4, 25.0, 6.8, LocalDate.parse("05-12-2020", DateTimeFormatter.ofPattern("MM-dd-yyyy")), "Brazil",
-                TrainingStatus.fromString("in service"), false, "Brazil"));
-
-        AnimalManager.addMonkey(new Monkey("Blue", "Macaque", "female", 2, 18.5,
-                8.1, 17.5, 9.6, LocalDate.parse("01-04-2022", DateTimeFormatter.ofPattern("MM-dd-yyyy")), "India",
-                TrainingStatus.fromString("Phase II"), false, "India"));
-
-        AnimalManager.addMonkey(new Monkey("Azure", "Guenon", "male", 7, 32.3,
-                16.7, 29.8, 23.4,LocalDate.parse("07-20-2019", DateTimeFormatter.ofPattern("MM-dd-yyyy")), "Africa",
-                TrainingStatus.fromString("in service"), true, "Africa"));
-    }       
 }

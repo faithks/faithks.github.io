@@ -5,6 +5,7 @@ import java.sql.Statement;
 
 public class DatabaseInitializer {
 
+	// Create initial databases with keys in each table
     public static void initialize() {
         try (Connection conn = DatabaseManager.getConnection();
              Statement stmt = conn.createStatement()) {

@@ -10,6 +10,7 @@ import java.util.List;
 
 public class DogDAO {
 
+	// Insert dog into database
     public void insertDog(Dog dog) {
         String sql = "INSERT INTO dogs (name, breed, gender, age, weight, acquisitionDate, acquisitionLocation, trainingStatus, reserved, serviceLocation) " +
                      "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
@@ -35,6 +36,7 @@ public class DogDAO {
         }
     }
 
+    // Retrieve all dogs
     public List<Dog> getAllDogs() {
         List<Dog> dogs = new ArrayList<>();
         String sql = "SELECT * FROM dogs";
@@ -66,6 +68,7 @@ public class DogDAO {
         return dogs;
     }
     
+    // Update reservation for dogs
     public void updateReserved(String dogName, boolean reserved) {
         String sql = "UPDATE dogs SET reserved = ? WHERE name = ?";
 

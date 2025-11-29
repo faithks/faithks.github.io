@@ -10,6 +10,7 @@ import java.util.List;
 
 public class MonkeyDAO {
 
+	// Insert monkey into database
     public void insertMonkey(Monkey monkey) {
         String sql = "INSERT INTO monkeys (name, species, gender, age, weight, tailLength, height, bodyLength, acquisitionDate, acquisitionLocation, trainingStatus, reserved, serviceLocation) " +
                      "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
@@ -38,6 +39,7 @@ public class MonkeyDAO {
         }
     }
 
+    // Retrieve all monkeys
     public List<Monkey> getAllMonkeys() {
         List<Monkey> monkeys = new ArrayList<>();
         String sql = "SELECT * FROM monkeys";
@@ -72,6 +74,7 @@ public class MonkeyDAO {
         return monkeys;
     }
     
+    // Update reservation
     public void updateReserved(String monkeyName, boolean reserved) {
         String sql = "UPDATE monkeys SET reserved = ? WHERE name = ?";
 
