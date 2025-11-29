@@ -16,14 +16,18 @@ import java.util.Scanner;
 import Grazioso.Animals.Dog;
 import Grazioso.Animals.Monkey;
 import Grazioso.Animals.TrainingStatus;
+import Grazioso.database.DatabaseInitializer;
 
 public class Driver {
     public static void main(String[] args) {
 
-        initializeDogList();
-        initializeMonkeyList();
+    	DatabaseInitializer.initialize();
+    	
         Scanner scanner = new Scanner(System.in);
         char choice = 0;
+        
+        AnimalManager.loadAnimalsFromDB();
+
 
         do {
             displayMenu();  // Display the menu

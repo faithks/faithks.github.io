@@ -7,18 +7,34 @@ import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 import Grazioso.Animals.*;
+import Grazioso.database.DogDAO;
+import Grazioso.database.MonkeyDAO;
 
 public class AnimalManager {
 
     private static final HashMap<String, Dog> dogsByName = new HashMap<>();
     private static final HashMap<String, Monkey> monkeysByName = new HashMap<>();
 
+    private static final DogDAO dogDAO = new DogDAO();
+    private static final MonkeyDAO monkeyDAO = new MonkeyDAO();
+
+    
     // Secondary index maps
     private static final HashMap<String, List<Dog>> dogsByCountry = new HashMap<>();
     private static final HashMap<TrainingStatus, List<Dog>> dogsByTraining = new HashMap<>();
 
     private static final HashMap<String, List<Monkey>> monkeysByCountry = new HashMap<>();
     private static final HashMap<TrainingStatus, List<Monkey>> monkeysByTraining = new HashMap<>();
+
+    public static void loadAnimalsFromDB() {
+        // Load dogs
+        List<Dog> dogsFromDB = dogDAO.getAllDogs();
+        for (Dog dog : dogsFromDB) addDog(dog);
+
+        // Load monkeys
+        List<Monkey> monkeysFromDB = monkeyDAO.getAllMonkeys();
+        for (Monkey monkey : monkeysFromDB) addMonkey(monkey);
+    }
 
 
     // Add animals
@@ -88,7 +104,8 @@ public class AnimalManager {
         double weight = Double.parseDouble(scanner.nextLine());
         
         System.out.println("What is the dog's Acquistion date (MM-DD-YYYY)?");
-        LocalDate acquisitionDate = LocalDate.parse(scanner.nextLine(), DateTimeFormatter.ofPattern("MM-DD-YYYY"));
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM-dd-yyyy");
+        LocalDate acquisitionDate = LocalDate.parse(scanner.nextLine(), formatter);
         
         System.out.println("What is the dog's Acquistion Location?");
         String acquisitionLocation = scanner.nextLine();
@@ -118,6 +135,8 @@ public class AnimalManager {
                 acquisitionLocation, trainingStatus, reserved, inServiceCountry);
 
         addDog(newDog);
+        dogDAO.insertDog(newDog);
+
     }
     
     public static void intakeNewMonkey(Scanner scanner) {          
@@ -187,7 +206,8 @@ public class AnimalManager {
             double bodyLength = Double.parseDouble(scanner.nextLine());
             
             System.out.println("What is the monkey's Acquistion date (MM-DD-YYYY)?");
-            LocalDate acquisitionDate = LocalDate.parse(scanner.nextLine(), DateTimeFormatter.ofPattern("MM-DD-YYYY"));
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM-dd-yyyy");
+            LocalDate acquisitionDate = LocalDate.parse(scanner.nextLine(), formatter);
             
             System.out.println("What is the monkey's Acquistion Location?");
             String acquisitionLocation = scanner.nextLine();
@@ -216,6 +236,8 @@ public class AnimalManager {
                     acquisitionDate, acquisitionLocation, trainingStatus, reserved, serviceCountry));
            
             addMonkey(newMonkey);
+            monkeyDAO.insertMonkey(newMonkey);
+
     }
 
     // Filters
@@ -247,6 +269,7 @@ public class AnimalManager {
             for (Dog d : candidates) {
                 if (!d.getReserved() && d.getTrainingStatus() == TrainingStatus.IN_SERVICE) {
                     d.setReserved(true);
+                    dogDAO.updateReserved(d.getName(), true); // persist change
                     return true;
                 }
             }
@@ -259,7 +282,9 @@ public class AnimalManager {
             for (Monkey m : candidates) {
                 if (!m.getReserved() && m.getTrainingStatus() == TrainingStatus.IN_SERVICE) {
                     m.setReserved(true);
+                    monkeyDAO.updateReserved(m.getName(), true); // persist change
                     return true;
+
                 }
             }
         }
