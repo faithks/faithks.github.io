@@ -38,10 +38,8 @@ h1, h2, h3, h4, h5, h6 {
     color: #ff8fcf !important;
 }
 
-blockquote {
-    border-left: 4px solid #ffb7d9 !important;
-    background: #fff0f8;
-    padding: 0.5em 1em;
+::selection {
+    background: #ffcae6;
 }
 
 img, pre, code, table, blockquote, .page-content {
@@ -55,7 +53,16 @@ img, pre, blockquote, table, .page-content {
 .site-header {
     background: linear-gradient(90deg, #ffe6f3, #fff7fb, #ffeef8);
     border-bottom: 1px solid #ffd1e8;
-    padding: 15px 0;
+    padding: 25px 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.site-header .wrapper {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 20px;
+    background: transparent !important;
 }
 
 .site-title, .site-nav {
@@ -70,6 +77,8 @@ hr {
     margin: 2rem 0;
 }
 
-::selection {
-    background: #ffcae6;
+blockquote {
+    border-left: 4px solid #ffb7d9 !important;
+    background: #fff0f8;
+    padding: 0.5em 1em;
 }
