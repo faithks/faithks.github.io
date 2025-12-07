@@ -1,0 +1,66 @@
+body {
+    background-color: #fff7fb;
+    color: #444; 
+}
+
+.site-title,
+.site-title:visited {
+    color: #ff9acb !important;
+}
+
+.site-nav .page-link {
+    color: #ff94c2 !important;
+}
+.site-nav .page-link:hover {
+    color: #ff7ab8 !important;
+}
+
+a {
+    color: #ff8ec7 !important;
+}
+a:hover {
+    color: #ff6fb7 !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #ff82c4 !important;
+}
+
+hr {
+    border: 1px solid #ffd1e8 !important;
+}
+
+.post-title {
+    color: #ff8fcf !important;
+}
+
+pre,
+code {
+    background-color: #ffe6f2 !important;
+    color: #333;
+    border-radius: 5px;
+}
+
+blockquote {
+    border-left: 4px solid #ffb7d9 !important;
+    color: #555;
+    background: #fff0f8;
+    padding: 0.5em 1em;
+    border-radius: 4px;
+}
+
+table {
+    border-color: #ffd6ea !important;
+}
+th {
+    background: #ffe8f4;
+    color: #444;
+}
+td {
+    background: #fff7fb;
+}
+
+/* Selection color */
+::selection {
+    background: #ffcae6;
+}
