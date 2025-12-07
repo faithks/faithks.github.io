@@ -22,34 +22,52 @@ body {
 
 a {
     color: #ff8ec7 !important;
+    transition: color 0.25s ease, transform 0.25s ease;
 }
 
 a:hover {
     color: #ff6fb7 !important;
+    transform: translateY(-2px);
 }
 
 h1, h2, h3, h4, h5, h6 {
     color: #ff82c4 !important;
 }
 
-hr {
-    border-color: #ffd1e8 !important;
-}
-
 .post-title {
     color: #ff8fcf !important;
-}
-
-pre, code {
-    background-color: #ffe6f2 !important;
-    border-radius: 5px;
 }
 
 blockquote {
     border-left: 4px solid #ffb7d9 !important;
     background: #fff0f8;
     padding: 0.5em 1em;
-    border-radius: 4px;
+}
+
+img, pre, code, table, blockquote, .page-content {
+    border-radius: 12px;
+}
+
+img, pre, blockquote, table, .page-content {
+    box-shadow: 0 4px 12px rgba(255, 182, 216, 0.35);
+}
+
+.site-header {
+    background: linear-gradient(90deg, #ffe6f3, #fff7fb, #ffeef8);
+    border-bottom: 1px solid #ffd1e8;
+    padding: 15px 0;
+}
+
+.site-title, .site-nav {
+    border-radius: 10px;
+    padding: 5px 10px;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background: linear-gradient(to right, #ffd1e8, #ffe6f3, #ffd1e8);
+    margin: 2rem 0;
 }
 
 ::selection {
