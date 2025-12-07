@@ -1,4 +1,5 @@
 title: Faith Sheppard
-logo: Users\fkshe\OneDrive\Documents\assets\cover.JPG
+#logo: Users\fkshe\OneDrive\Documents\assets\cover.JPG
 description: CS 499 | ePortfolio | SNHU 2025
+#show_downloads: true
 theme: jekyll-theme-minimal
