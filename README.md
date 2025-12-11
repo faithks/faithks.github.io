@@ -12,10 +12,12 @@ I have gained practical experience and developed skills for key computer science
 -	I have also emphasized over time the importance of software engineering and best practices including unit testing, modular application, industry standards, and use of the software development lifecycle. 
 -	I’ve worked on databases in a variety of areas including MySQL, MongoDB, and Power BI. I’ve learned how to implement CRUD operations, schema designs, and how to visualize the data both to understand it and to present it to others for insights and analytics.
 -	Lastly, security standards and practices have been a major skill I’ve gained and focused on in my studies. There’s a multitude of best practices to follow that I’ve been sure to incorporate in my projects like protecting data, validating input, and learning where programs can have vulnerabilities. It’s important to ensure access is limited, users are authenticated, and applications are safe especially for more public facing uses where hackers are prevalent. 
+
 These key concepts, skills, and having installed these specific values, have all helped to shape me and prepare me to enter the workforce and industry. 
 This portfolio as a whole focuses on three major categories of computer science: software design and engineering, algorithms and data structure, and lastly databases. I’ve taken two artifacts from early in my studies to enhance based on these categories to highlight my growth and skills. My artifacts include:
 -	An appointment and task management Java application, originally focused on JUnit testing.
 -	A rescue animal management application for intake, listing, and reservation of animals for rescue work.
+
 These artifacts have been expanded to include user authentication, a user interface, a database, and even an analytical visual in Power BI. Together they highlight my development and range of skills I’ve amassed over my studies. 
 
 
