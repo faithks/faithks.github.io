@@ -34,6 +34,7 @@ While this code review is informal, it's an essntial part of coding projects and
 - links
 - images
 - [Github Repository](https://github.com/faithks/faithks.github.io)
+
 [Artifact One was originally from CS 320](https://github.com/faithks/faithks.github.io/tree/Initial-Artifact-One-CS320). The program was made up of an Appointment, AppointmentService, Contact, ContactService, Task, and TaskService class as well as JUnit testing for each one. The program had no interface, held no actual data, and was focused mainly on the testing coverage. These classes described an object for each category and had CRUD methods included. Each object had keys like names, ID’s, descriptions, and more. The artifact at the time didn’t do much when ran beside provide the coverage result of the unit testing.
 
 With this fairly blank slate and so many directions I could take this artifact, I decided this was a great opportunity to enhance this specific project. I was able to have a bit of creativity with it and how I wanted to enhance it. I was able to work with incorporating the classes together for more complexity, and to provide users an actual interface to interact with the classes. I was also able to enhance the artifact to use files to store the memory between uses for a more realistic approach. I also began working with user authentication for a more complex log in process and security. This all together shows my skills with encapsulation, security, memory data, and more.
