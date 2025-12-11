@@ -26,7 +26,9 @@ These artifacts have been expanded to include user authentication, a user interf
 
 
 ## Code Review
-[Watch my Code Review](https://drive.google.com/file/d/1CTPSq0v-3YGTiMK1doXizcfJ4iWIB1Gv/view?usp=sharing) to see my full plan for these enhancments based on the original code.
+[Watch my Code Review](https://drive.google.com/file/d/1CTPSq0v-3YGTiMK1doXizcfJ4iWIB1Gv/view?usp=sharing) to see my full plan for these enhancments based on the original code. I go through the existing function, check for industry standards and utilze a code review checklist, and then provide my planned enhancements and goals.
+
+While this code review is informal, it's an essntial part of coding projects and can make the difference in quality and in efficiency of an artifact. 
 
 ## Enhancement One
 - description
