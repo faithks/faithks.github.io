@@ -31,10 +31,6 @@ These artifacts have been expanded to include user authentication, a user interf
 While this code review is informal, it's an essntial part of coding projects and can make the difference in quality and in efficiency of an artifact. 
 
 ## Enhancement One: Software Design and Engineering
-- links
-- images
-- [Github Repository](https://github.com/faithks/faithks.github.io)
-
 [Artifact One was originally from CS 320](https://github.com/faithks/faithks.github.io/tree/Initial-Artifact-One-CS320). The program was made up of an Appointment, AppointmentService, Contact, ContactService, Task, and TaskService class as well as JUnit testing for each one. The program had no interface, held no actual data, and was focused mainly on the testing coverage. These classes described an object for each category and had CRUD methods included. Each object had keys like names, ID’s, descriptions, and more. The artifact at the time didn’t do much when ran beside provide the coverage result of the unit testing.
 
 With this fairly blank slate and so many directions I could take this artifact, I decided this was a great opportunity to enhance this specific project. I was able to have a bit of creativity with it and how I wanted to enhance it. I was able to work with incorporating the classes together for more complexity, and to provide users an actual interface to interact with the classes. [I was also able to enhance the artifact](https://github.com/faithks/faithks.github.io/tree/Enhanced-Artifact-One-CS320) to use files to store the memory between uses for a more realistic approach. I also began working with user authentication for a more complex log in process and security. This all together shows my skills with encapsulation, security, memory data, and more.
@@ -42,13 +38,13 @@ With this fairly blank slate and so many directions I could take this artifact, 
 As I was working on creating and improving this specific artifact I was able to learn more about the best steps to take when you have no outline. Often with school projects the course is laid out to help you build from the ground up, working on the base of your project first and expanding to the next area that makes the most sense. The course is built to keep you from having to constantly back track and re-do sections as you create your next steps. With that outline taken from me and being left to my own accord it was up to me to decide what the best course of action would be. I had to decide what to enhance and work on first to try and eliminate having to re-do the same work over and over again. I made sure to brush up on things like J Unit testing and certain Java keywords that are required for this artifact. It’s important to brush up on skills and languages you don’t utilize often to ensure you’re able to still work with them and don’t fall behind on ever changing practices and languages. 
 
 
-## Enhancment Two
-- description
-- links
-- images
-  
-#### Narrative
-- insert narrative
+## Enhancment Two: Algorithms and Data Structure
+[Artifact Two was originally from IT 145](https://github.com/faithks/faithks.github.io/tree/Initial-Artifact-Two-IT145). The purpose of the program was to take in dogs and monkeys, and store them in array lists. These animals could then be reserved, or printed out based on either animal type or availability. There was a small menu and a couple of animals that were hard coded in for testing purposes. it held a parent class called RescueAnimals and two sub classes called Dog and Monkey. There was also a Driver class that held the menu information.
+
+I decided to use this artifact as it would benefit from utilize things like searching and filtering, and had a fairly weak structure with the data all being kept in arrays. I felt there were a lot of things that could be added to improve this, even some more basic items, to get the program to run faster and more efficiently. [I was able to enhance this artifact](https://github.com/faithks/faithks.github.io/tree/Enhanced-Artifact-Two-IT145) with extra filters or search types, and I could expand to add more menu options or structuring since the animals have so many different variables needed to be stored. I was able to change quite a lot already by moving to hash maps with different indexes, add filtering the maps, and searching through the maps for specific animals like ones that are unreserved. I did some basic code editing as well with changing variable types in anticipation of things like comparisons, and I added in an Enum for one of the variables which is helpful to keep the data well structured and similar. 
+
+Over the course of modifying this artifact I learned how many ways there are to do the same thing while coding. Every time I thought of the way I wanted to insert something new, or change the way I previously did something, I could think of more than one path I could take. It was a little overwhelming to have so many options and to not be sure what the best one to pick was. Should I go with what would take me less time, what’s the cleanest, what’s the fastest, what’s the more diverse? I really had to decide what it is I was trying to do with the project as a whole to narrow down my choices. In previous classes you learn specific skills and are expected to utilize them in your projects, it’s not often they let you choose your own paths on how to get something done. 
+
 
 ## Enhancement Three
 - decsription
