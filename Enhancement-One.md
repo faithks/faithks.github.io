@@ -33,3 +33,8 @@ As I was working on creating and improving this specific artifact I was able to 
 - User authentication and basic security practices
 - Unit testing with JUnit
 - Code refactoring and maintainability
+
+#### Course Outcomes Met
+- Course outcome 5: Develop a security mindset that anticipates adversarial exploits in software architecture and designs to expose potential vulnerabilities, mitigate design flaws, and ensure privacy and enhanced security of data and resources
+- Course outcome 4: Demonstrate an ability to use well-founded and innovative techniques, skills, and tools in computing practices for the purpose of implementing computer solutions that deliver value and accomplish industry-specific goals
+
