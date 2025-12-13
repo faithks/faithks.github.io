@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Enhancement One: Software Design & Engineering
+title: Software Design & Engineering
 ---
 
 ## Enhancement One: Software Design and Engineering
