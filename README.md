@@ -38,11 +38,27 @@ This particular code review was drafter for my professor and examined things lik
 This code review is a critical step in professional development and demonstrates key skills like the ability to assess code, locate findings and communicate errors, and plan meaningful changes.
 
 ## Enhancement One: Software Design and Engineering
-Artifact One originated from CS 320. The original program was made up of an `Appointment`, `AppointmentService`, `Contact`, `ContactService`, `Task`, and `TaskService` class as well as **JUnit testing** for each one. The program had no interface, held no actual data, and was focused mainly on the testing coverage. These classes described an object for each category and had CRUD methods included. Each object had keys like names, ID’s, descriptions, and more. The artifact at the time didn’t do much when ran beside provide the coverage result of the unit testing.
+#### Original Program
+Artifact One originated from CS 320. The original program was made up of an `Appointment`, `AppointmentService`, `Contact`, `ContactService`, `Task`, and `TaskService` class with corresponding **JUnit testing** for each one. The program had no interface, held no actual data, and was focused mainly on effective testing coverage. The classes described objects and utilized CRUD methods that were the main focus of the testing coverage. The artifact at the time didn’t do much when ran beside provide the coverage result of the unit testing.
 
-With this fairly blank slate and so many directions I could take this artifact, I decided this was a great opportunity to enhance this specific project. I was able to have a bit of creativity with it and how I wanted to enhance it. I was able to work with incorporating the classes together for more complexity, and to provide users an actual interface to interact with the classes. [I was also able to enhance the artifact](https://github.com/faithks/faithks.github.io/tree/Enhanced-Artifact-One-CS320) to use files to store the memory between uses for a more realistic approach. I also began working with user authentication for a more complex log in process and security. This all together shows my skills with encapsulation, security, memory data, and more.
+[View my original artifact here.](https://github.com/faithks/faithks.github.io/tree/Initial-Artifact-One-CS320)
 
+#### Decisions and Enhancements
+With this limited functionality of this artifact I decided this was a great opportunity to enhance this specific project to expand its complexity and usage. I was able to have a bit of creativity with it and how I wanted to enhance it. I was able to work with incorporating the classes together for more complexity, and to provide users an actual **interface** to interact with the classes. I was also able to enhance the artifact to use **file persistence** to store the memory between uses for a more realistic approach. I also began working with **user authentication** for a more complex log in process and to make sure secruity was a key consideration in this enhancmenet. Together these improvements took this program from a testing focus to a functional application with more real world usage and practices.
+
+[View my enhanced artifact here](https://github.com/faithks/faithks.github.io/tree/Enhanced-Artifact-One-CS320)
+
+#### Takeaways and Learning
 As I was working on creating and improving this specific artifact I was able to learn more about the best steps to take when you have no outline. Often with school projects the course is laid out to help you build from the ground up, working on the base of your project first and expanding to the next area that makes the most sense. The course is built to keep you from having to constantly back track and re-do sections as you create your next steps. With that outline taken from me and being left to my own accord it was up to me to decide what the best course of action would be. I had to decide what to enhance and work on first to try and eliminate having to re-do the same work over and over again. I made sure to brush up on things like J Unit testing and certain Java keywords that are required for this artifact. It’s important to brush up on skills and languages you don’t utilize often to ensure you’re able to still work with them and don’t fall behind on ever changing practices and languages. 
+
+#### Skills Demonstrated
+- Object-oriented design
+- Encapsulation
+- Modular architecture
+- File based data persistence
+- User authentication and basic security practices
+- Unit testing with JUnit
+- Code refactoring and maintainability
 
 
 ## Enhancment Two: Algorithms and Data Structure
