@@ -5,8 +5,12 @@ title: Software Design & Engineering
 [Home](index.md) | [Code Review](CodeReview.md) | [Software Design](Enhancement-One.md) | [Algorithms](Enhancement-Two.md) | [Databases](Enhancement-Three.md)
 ---
 
+---
 
 ## Enhancement One: Software Design and Engineering
+
+---
+
 #### Original Program
 Artifact One originated from CS 320. The original program was made up of an `Appointment`, `AppointmentService`, `Contact`, `ContactService`, `Task`, and `TaskService` class with corresponding **JUnit testing** for each one. The program had no interface, held no actual data, and was focused mainly on effective testing coverage. The classes described objects and utilized CRUD methods that were the main focus of the testing coverage. The artifact at the time didn’t do much when ran beside provide the coverage result of the unit testing.
 
