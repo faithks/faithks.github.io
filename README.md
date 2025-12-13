@@ -46,9 +46,10 @@ I decided to use this artifact as it would benefit from utilize things like sear
 Over the course of modifying this artifact I learned how many ways there are to do the same thing while coding. Every time I thought of the way I wanted to insert something new, or change the way I previously did something, I could think of more than one path I could take. It was a little overwhelming to have so many options and to not be sure what the best one to pick was. Should I go with what would take me less time, what’s the cleanest, what’s the fastest, what’s the more diverse? I really had to decide what it is I was trying to do with the project as a whole to narrow down my choices. In previous classes you learn specific skills and are expected to utilize them in your projects, it’s not often they let you choose your own paths on how to get something done. 
 
 
-## Enhancement Three
-- decsription
-- links
-- images
-#### Narrative
-- insert narrative
+## Enhancement Three: Databases
+The artifact for enhancement three is the same one chosen for [enhancement two](https://github.com/faithks/faithks.github.io/tree/Enhanced-Artifact-Two-IT145). I started enhancement three after the updates were made from enhancement two - meaning I was begining my work with hash maps, indexes, filtering, and a better search system. I also changed variable information and cleaned up my naming conventions and types. This cleaned up version is what I went in with to begin my work on enhancement three.
+
+I decided to utilize the same artifact for both categories as I felt I would be able to blend the algorithm and data structures with a new database, and it would allow me to spend more time on analyzing the data in [Power BI](https://github.com/faithks/faithks.github.io/blob/Dashboard-Artifact-Two/Grazioso%20Animal%20Dashboard.pbix). I wanted to keep most of my searching and filtering done through the hash maps and wanted my database focus to be on my ability to create and initialize one for data that had so many different columns, and on my ability to analyze the data and present it to others. My career goals have me striving to focus my skills on my ability to clean up and organize data and showcase to others which is why bringing in power BI was my goal for this enhancement. By creating a dashboard like this I’m able to provide visual communications to my audience with our data and allow the environment to be more collaborative by letting others in different fields see and utilize the data for decision making. 
+
+Through this portion of my ePortfolio I was reminded of the importance of having clean data at the start to ensure that there's no hiccups in analyzing or using the data later on. I also had to work with downloading a new driver and applications ot be able to connect my artifact to an SQLite database. 
+
