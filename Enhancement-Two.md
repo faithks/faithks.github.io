@@ -2,6 +2,9 @@
 layout: default
 title: Algorithms & Data Structures
 ---
+[Home](index.md) | [Code Review](code-review.md) | [Software Design](software-design.md) | [Algorithms](algorithms.md) | [Databases](databases.md)
+---
+
 
 ## Enhancment Two: Algorithms and Data Structure
 #### Original Program
