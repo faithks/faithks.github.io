@@ -19,7 +19,9 @@ In addition to including a databse I focused on analyzing and presenting the dat
 
 [View my enhanced artifact here.](https://github.com/faithks/faithks.github.io/tree/Enhanced-Artifact-Two-IT145)
 
-[View my Power BI dashboard here.](https://github.com/faithks/faithks.github.io/blob/Dashboard-Artifact-Two/Grazioso%20Animal%20Dashboard.pbix)
+[Download my Power BI dashboard here.](https://github.com/faithks/faithks.github.io/blob/Dashboard-Artifact-Two/Grazioso%20Animal%20Dashboard.pbix)
+
+![Animal Dashboard](docs/assets/GraziosoDashboard.png)
 
 #### Takeaways and Learning
 Through this portion of my ePortfolio I was reminded of the importance of having clean data at the start to ensure that there's no hiccups in analyzing or using the data later on. I encounter challanges with database connectivity and configuration but was able to research and troubleshoot my problems. Addressing and taking on these challenges allows me to strengthen my understanding of applications and how they interact with databases and the need for careful planning from the start. This particular enhancment also aligns my skill set with my career goals in backend development and data analytics.
