@@ -5,8 +5,13 @@ title: Algorithms & Data Structures
 [Home](index.md) | [Code Review](CodeReview.md) | [Software Design](Enhancement-One.md) | [Algorithms](Enhancement-Two.md) | [Databases](Enhancement-Three.md)
 ---
 
+---
 
 ## Enhancement Two: Algorithms and Data Structure
+
+---
+
+
 #### Original Program
 Artifact Two originated from IT 145. The purpose of the original program was to manage the intake of rescue animals and their reservations. The program stored the dogs and monkeys in separate `ArrayList` and allowed users to reserve them or print lists based on either animal type or availability. This artifact was functional and included a small menu and a couple of animals that were hard coded in for testing purposes. It offered limited search options and wouldn't scale efficiently with a large dataset.
 
