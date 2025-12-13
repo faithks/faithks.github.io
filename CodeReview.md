@@ -5,8 +5,12 @@ title: Code Review
 [Home](index.md) | [Code Review](CodeReview.md) | [Software Design](Enhancement-One.md) | [Algorithms](Enhancement-Two.md) | [Databases](Enhancement-Three.md)
 ---
 
+---
 
 ## Code Review
+
+---
+
 [Watch my Code Review](https://drive.google.com/file/d/1CTPSq0v-3YGTiMK1doXizcfJ4iWIB1Gv/view?usp=sharing) to see my full plan for these enhancements based on the original code. 
 
 Before working on any of my artifacts, I go through the existing function, check for industry standards and utilize a code review checklist, and then provide my planned enhancements and goals. An informal code review can highlight areas of improvement and evaluate changes that need to be made in order to increase the efficiency of your work as well as the quality. 
