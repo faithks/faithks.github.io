@@ -6,14 +6,14 @@ title: Algorithms & Data Structures
 ---
 
 
-## Enhancment Two: Algorithms and Data Structure
+## Enhancement Two: Algorithms and Data Structure
 #### Original Program
-Artifact Two originated from IT 145. The purpose of the original program was to manage the intake of resuce animals and their reservations. The program stored the dogs and monkeys in seperate `ArrayList` and allowed users to reserve them or print lists based on either animal type or availability. This artifact was functional and included a small menu and a couple of animals that were hard coded in for testing purposes. It offered limited search options and wouldn't scale efficiently with a large dataset.
+Artifact Two originated from IT 145. The purpose of the original program was to manage the intake of rescue animals and their reservations. The program stored the dogs and monkeys in separate `ArrayList` and allowed users to reserve them or print lists based on either animal type or availability. This artifact was functional and included a small menu and a couple of animals that were hard coded in for testing purposes. It offered limited search options and wouldn't scale efficiently with a large dataset.
 
 [View my original artifact here.](https://github.com/faithks/faithks.github.io/tree/Initial-Artifact-Two-IT145)
 
 #### Decisions and Enhancements
-I decided to use this artifact as it would benefit from improving searching and filtering, and had a fairly weak structure with the data all being kept in arrays. I felt there were a lot of things that could be added to improve this, even some more basic items, to get the program to run faster and more efficiently. I was able to enhance this artifact with extra filters or search types, and I could expand to add more menu options or structuring since the animals have so many different variables needed to be stored. I was able to change quite a lot already by moving to **HashMaps with different indexes**, add **filtering** the maps, and searching through the maps for specific animals like ones that are unreserved. Changes like this reduced linear searches and shows my understanding of algorithmic complexity and appropriate data structure choices. I also did some basic code editing as well with changing variable types in anticipation of things like comparisons, and I added in an `Enum` to standardize variables which is helpful to keep the data well structured and similar. This reduced potential errors and makes code maintainable.
+I decided to use this artifact as it would benefit from improving searching and filtering and had a fairly weak structure with the data all being kept in arrays. I felt there were a lot of things that could be added to improve this, even some more basic items, to get the program to run faster and more efficiently. I was able to enhance this artifact with extra filters or search types, and I could expand to add more menu options or structuring since the animals have so many different variables needed to be stored. I was able to change quite a lot already by moving to **HashMaps with different indexes**, add **filtering** the maps, and searching through the maps for specific animals like ones that are unreserved. Changes like this reduced linear searches and shows my understanding of algorithmic complexity and appropriate data structure choices. I also did some basic code editing as well with changing variable types in anticipation of things like comparisons, and I added in an `Enum` to standardize variables which is helpful to keep the data well-structured and similar. This reduced potential errors and made the code maintainable.
 
 [View my enhanced artifact here.](https://github.com/faithks/faithks.github.io/tree/Enhanced-Artifact-Two-IT145)
 ![Menu Example](docs/assets/ArtifactTwo.png)
@@ -27,4 +27,4 @@ Over the course of modifying this artifact I learned how many ways there are to 
 - Algorithmic thinking and performance considerations
 - Searching and filtering algorithms
 - Code refactoring for scalability and maintainability
-- Use of enum types for data consistency
+- Use of Enum types for data consistency
