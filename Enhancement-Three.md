@@ -1,3 +1,8 @@
+---
+layout: default
+title: Databases
+---
+
 ## Enhancement Three: Databases
 #### Original Program
 The artifact for enhancement three is the same one chosen for enhancement two, the rescue animal management application. I started enhancement three after the updates were made from enhancement two including structural and algorithmic improvements like `HashMap` storage, better search and filtering, and refining variables. This cleaned up version is what I went in with to begin my work on enhancement three allowing me to focus soley on databse design and analysis rather than restructuring an application again. 
