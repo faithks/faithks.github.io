@@ -2,7 +2,7 @@
 layout: default
 title: Software Design & Engineering
 ---
-[Home](index.md) | [Code Review](code-review.md) | [Software Design](software-design.md) | [Algorithms](algorithms.md) | [Databases](databases.md)
+[Home](index.md) | [Code Review](CodeReview.md) | [Software Design](Enhancement-One.md) | [Algorithms](Enhancement-Two.md) | [Databases](Enhancement-Three.md)
 ---
 
 
