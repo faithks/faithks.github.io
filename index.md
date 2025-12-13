@@ -5,12 +5,19 @@ title: Home
 [Home](index.md) | [Code Review](CodeReview.md) | [Software Design](Enhancement-One.md) | [Algorithms](Enhancement-Two.md) | [Databases](Enhancement-Three.md)
 ---
 
+---
+
 # SNHU ePortfolio
+
+---
 
 ## Introduction
 *Welcome!* My name is Faith Sheppard and this professional ePortfolio is representative of my growth and time spent at **Southern New Hampshire University**. This is a capstone reflecting on the major skills and outcomes I've learned and achieved while studying at this university and completing hands-on projects. I began my journey in this computer science program three years ago with no skills or experience in this industry. Over the course of my studies, I've been able to build a solid foundation in software engineering. data structures, and databases. This portfolio is a reflection of my progress both technical and academic through three key areas of computer science. This is to aid in showcasing my readiness to transition into the data field.
 
 ## Professional Self-Assessment
+
+---
+
 ### Personal Goals and Growth
 Throughout my years with Southern New Hampshire University studying computer science, as well as in this creation of my ePortfolio, I have been able to shape my goals, strengthen and learn new skills, and have prepared myself for this new career field. My coursework included practical, hands-on projects that were able to apply my new skills outside of a standard test setting. I’ve been able to work through new languages, systems, and tools to give myself a well-rounded base to continue learning and growing.
 
