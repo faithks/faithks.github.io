@@ -5,6 +5,11 @@ title: Home
 [Home](index.md) | [Code Review](CodeReview.md) | [Software Design](Enhancement-One.md) | [Algorithms](Enhancement-Two.md) | [Databases](Enhancement-Three.md)
 ---
 
+<center>
+<img src="docs/assets/logan-voss-SmU9o1ZGqgk-unsplash (1).jpg" alt="Banner" width="1200">
+<p><em>Showcasing my growth and achievements in Computer Science at SNHU</em></p>
+</center>
+
 ---
 
 # SNHU ePortfolio
