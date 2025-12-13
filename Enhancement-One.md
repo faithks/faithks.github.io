@@ -21,11 +21,13 @@ With this limited functionality of this artifact, I decided this was a great opp
 
 [View my enhanced artifact here](https://github.com/faithks/faithks.github.io/tree/Enhanced-Artifact-One-CS320)
 
---
+---
+
+#### Menu Screen Example
 
 ![Menu Screen](docs/assets/ArtifactOne.png)
 
---
+---
 
 #### Takeaways and Learning
 As I was working on creating and improving this specific artifact I was able to learn more about the best steps to take when you have no outline. Often with school projects the course is laid out to help you build from the ground up, working on the base of your project first and expanding to the next area, that makes the most sense. The course is built to keep you from having to constantly back track and re-do sections as you create your next steps. With that outline taken from me and being left to my own accord it was up to me to decide what the best course of action would be. I had to decide what to enhance and work on first to try and eliminate having to re-do the same work over and over again. I made sure to brush up on things like J Unit testing and certain Java keywords that are required for this artifact. It’s important to brush up on skills and languages you don’t utilize often to ensure you’re able to still work with them and don’t fall behind on ever changing practices and languages. 
