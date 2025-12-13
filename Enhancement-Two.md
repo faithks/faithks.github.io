@@ -21,7 +21,14 @@ Artifact Two originated from IT 145. The purpose of the original program was to 
 I decided to use this artifact as it would benefit from improving searching and filtering and had a fairly weak structure with the data all being kept in arrays. I felt there were a lot of things that could be added to improve this, even some more basic items, to get the program to run faster and more efficiently. I was able to enhance this artifact with extra filters or search types, and I could expand to add more menu options or structuring since the animals have so many different variables needed to be stored. I was able to change quite a lot already by moving to **HashMaps with different indexes**, add **filtering** the maps, and searching through the maps for specific animals like ones that are unreserved. Changes like this reduced linear searches and shows my understanding of algorithmic complexity and appropriate data structure choices. I also did some basic code editing as well with changing variable types in anticipation of things like comparisons, and I added in an `Enum` to standardize variables which is helpful to keep the data well-structured and similar. This reduced potential errors and made the code maintainable.
 
 [View my enhanced artifact here.](https://github.com/faithks/faithks.github.io/tree/Enhanced-Artifact-Two-IT145)
+
+---
+
+#### Menu Screen Example
+
 ![Menu Example](docs/assets/ArtifactTwo.png)
+
+---
 
 #### Takeaways and Learning
 Over the course of modifying this artifact I learned how many ways there are to do the same thing while coding. Every time I thought of the way I wanted to insert something new, or change the way I previously did something, I could think of more than one path I could take. It was a little overwhelming to have so many options and to not be sure what the best one to pick was. Should I go with what would take me less time, what’s the cleanest, what’s the fastest, what’s the more diverse? I really had to decide what it is I was trying to do with the project as a whole to narrow down my choices. In previous classes you learn specific skills and are expected to utilize them in your projects, it’s not often they let you choose your own paths on how to get something done. This process strengthened my confidence in my decision making and reinforced the importance of structure and design for systems with large data quantities.
@@ -33,3 +40,7 @@ Over the course of modifying this artifact I learned how many ways there are to 
 - Searching and filtering algorithms
 - Code refactoring for scalability and maintainability
 - Use of Enum types for data consistency
+
+#### Course Outcomes Met
+- Course outcome 3: Design and evaluate computing solutions that solve a given problem using algorithmic principles and computer science practices and standards appropriate to its solution, while managing the trade-offs involved in design choices
+- Course outcome 4: Demonstrate an ability to use well-founded and innovative techniques, skills, and tools in computing practices for the purpose of implementing computer solutions that deliver value and accomplish industry-specific goals
