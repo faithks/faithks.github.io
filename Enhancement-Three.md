@@ -28,7 +28,7 @@ In addition to including a database I focused on analyzing and presenting the da
 ![Animal Dashboard](docs/assets/GraziosoDashboard.png)
 
 #### Takeaways and Learning
-Through this portion of my ePortfolio I was reminded of the importance of having clean data at the start to ensure that there's no hiccups in analyzing or using the data later on. I encounter challenges with database connectivity and configuration but was able to research and troubleshoot my problems. Addressing and taking on these challenges allows me to strengthen my understanding of applications and how they interact with databases and the need for careful planning from the start. This particular enhancement also aligns my skill set with my career goals in backend development and data analytics.
+Through this portion of my ePortfolio I was reminded of the importance of having clean data at the start to ensure that there's no hiccups in analyzing or using the data later on. I encountered challenges with database connectivity and configuration but was able to research and troubleshoot my problems. Addressing and taking on these challenges allows me to strengthen my understanding of applications and how they interact with databases and the need for careful planning from the start. This particular enhancement also aligns my skill set with my career goals in backend development and data analytics.
 
 #### Skills Demonstrated
 - Relational database design
